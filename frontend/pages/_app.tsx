@@ -4,7 +4,7 @@ import '../styles/globals.css';
 import { AuthCoreContextProvider, PromptSettingType } from '@particle-network/auth-core-modal';
 import { AvalancheTestnet } from '@particle-network/chains';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function Socioo({ Component, pageProps }: AppProps) {
     return (
         <AuthCoreContextProvider
         options={{
@@ -36,4 +36,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default MyApp;
+export default Socioo;
