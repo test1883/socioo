@@ -14,13 +14,22 @@ const Home: NextPage = () => {
     const { address, provider } = useEthereum();
 
     useEffect(() => {
-        if (address) {
+        if (provider && !window.smartAccount) {
             setUpSmartAccount()
+        }
+    }, [provider])
+
+    useEffect(() => {
+        if (address) {
+            (async function () {
+                const address = await window.smartAccount.getAddress();
+                console.log(address)
+            })()
         }
     }, [address])
 
     const setUpSmartAccount = async () => {
-        const smartAccount = new SmartAccount(provider, {
+        window.smartAccount = new SmartAccount(provider, {
             projectId: process.env.NEXT_PUBLIC_PROJECT_ID as string,
             clientKey: process.env.NEXT_PUBLIC_CLIENT_KEY as string,
             appId: process.env.NEXT_PUBLIC_APP_ID as string,
@@ -40,9 +49,8 @@ const Home: NextPage = () => {
             },
         });
 
-        smartAccount.setSmartAccountContract({ name: 'BICONOMY', version: '2.0.0' });
-        const address = await smartAccount.getAddress();
-        console.log(address)
+        window.smartAccount.setSmartAccountContract({ name: 'BICONOMY', version: '2.0.0' });
+        
     }
 
     const handleConnect = async () => {
