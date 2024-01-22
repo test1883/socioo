@@ -1,18 +1,17 @@
 import type { NextPage } from 'next';
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
-import { useConnect, useEthereum, useSolana } from '@particle-network/auth-core-modal';
+import { useConnect, useEthereum } from '@particle-network/auth-core-modal';
 import { SmartAccount } from '@particle-network/aa';
 import { AvalancheTestnet } from '@particle-network/chains';
-import { useEffect } from 'react';
 
 const Home: NextPage = () => {
     const { connect, disconnect, connectionStatus } = useConnect();
 
-    // use for evm chains
-    const { address, chainId, provider, sendTransaction, signMessage, signTypedData } = useEthereum();
+    const { address, provider } = useEthereum();
 
     useEffect(() => {
         if (address) {
