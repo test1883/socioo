@@ -5,7 +5,7 @@ compatibility_date = "2023-03-15"
 [[d1_databases]]
 binding = "DB"
 database_name = "socioo"
-database_id = "6b30bc65-edda-4e25-bb5a-8681b0419031"
+database_id = "8ba6bf8a-f18c-4c66-b638-29169133e81e"
 
 # The necessary secrets are:
 # - PRIVATE_KEY
