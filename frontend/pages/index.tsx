@@ -5,8 +5,9 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
 import { useConnect, useEthereum } from '@particle-network/auth-core-modal';
-import { SmartAccount } from '@particle-network/aa';
+import { AAWrapProvider, SendTransactionMode, SmartAccount } from '@particle-network/aa';
 import { AvalancheTestnet } from '@particle-network/chains';
+import Web3 from 'web3';
 
 const Home: NextPage = () => {
     const { connect, disconnect, connectionStatus } = useConnect();
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
                 }]
             },
         });
-
+        window.web3 = new Web3(new AAWrapProvider(window.smartAccount, SendTransactionMode.UserSelect) as any);
         window.smartAccount.setSmartAccountContract({ name: 'BICONOMY', version: '2.0.0' });
         
     }
@@ -56,7 +57,10 @@ const Home: NextPage = () => {
     const handleConnect = async () => {
         try {
             await connect({
-                chain: {id: AvalancheTestnet.id, name: AvalancheTestnet.name}
+                chain: {
+                    id: AvalancheTestnet.id, 
+                    name: AvalancheTestnet.name
+                }
             });
 
         } catch (error) {
