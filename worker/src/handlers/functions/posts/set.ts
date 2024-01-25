@@ -10,6 +10,10 @@ export async function set(postData: Post, env: Env) {
   await db
     .insertInto('posts')
     .values(body)
-    .onConflict((oc) => oc.column('postId').doUpdateSet(body))
+    .onConflict((oc) => oc
+        .column('postId')
+        .where('name', '=', body.name)
+        .doUpdateSet(body)
+    )
     .execute()
 }
