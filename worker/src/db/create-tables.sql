@@ -22,22 +22,22 @@ CREATE TABLE IF NOT EXISTS profiles {
 
 CREATE TABLE IF NOT EXISTS posts {
 	name TEXT NOT NULL,
-	postId INT NOT NULL,
+	post_id INT NOT NULL,
 	likes TEXT,
 	challenge TEXT,
 	files TEXT NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-	PRIMARY KEY(name, postId),
+	PRIMARY KEY(name, post_id),
 }
 
 CREATE TABLE IF NOT EXISTS comments {
 	owner TEXT NOT NULL,
 	name TEXT NOT NULL,
-	postId INT NOT NULL,
+	post_id INT NOT NULL,
 	comment TEXT NOT NULL,
 	comment_id INT NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-	PRIMARY KEY(name, postId, commentId)
+	PRIMARY KEY(name, post_id, commentId)
 }
