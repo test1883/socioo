@@ -39,5 +39,5 @@ CREATE TABLE IF NOT EXISTS comments {
 	comment_id INT NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-	PRIMARY KEY(name, post_id, commentId)
+	PRIMARY KEY(name, post_id, comment_id)
 }
