@@ -102,7 +102,7 @@ export interface CommentInKysely {
   name: string,
   postId: number,
   comment: string,
-  commentId: string,
+  commentId: number,
   createdAt: ColumnType<Date, never, never>
   updatedAt: ColumnType<Date, never, string | undefined>
 }
