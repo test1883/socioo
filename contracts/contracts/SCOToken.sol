@@ -16,10 +16,10 @@ contract SCOToken is ERC20 {
         require(msg.sender == owner);
         _;
     }
-    /*
-        @notice supply tokens to the main contract
-        @param scoContract contract address of the sco contract
-        @param supply amount of tokens to be minted
+    /**
+        * @notice supply tokens to the main contract
+        * @param scoContract contract address of the sco contract
+        * @param supply amount of tokens to be minted
     */
     function supplyTokens(address scoContract, uint256 supply) external onlyOwner {
         _mint(scoContract, supply);
