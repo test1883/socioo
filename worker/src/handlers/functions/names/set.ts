@@ -1,6 +1,6 @@
-import { createKysely } from '../../db/kysely'
-import { Env } from '../../env'
-import { Name } from '../../models'
+import { createKysely } from '../../../db/kysely'
+import { Env } from '../../../env'
+import { Name } from '../../../models'
 import { stringifyNameForDb } from './utils'
 
 export async function set(nameData: Name, env: Env) {

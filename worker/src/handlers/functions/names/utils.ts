@@ -1,6 +1,6 @@
 import { Insertable, Selectable } from 'kysely'
 
-import { Name, NameInKysely } from '../../models'
+import { Name, NameInKysely } from '../../../models'
 
 type SelectableKysely = Selectable<NameInKysely>
 type InsertableKysely = Insertable<NameInKysely>

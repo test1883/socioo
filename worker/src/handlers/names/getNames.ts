@@ -1,6 +1,6 @@
-import { createKysely } from '../db/kysely'
-import { Env } from '../env'
-import { parseNameFromDb } from './functions/utils'
+import { createKysely } from '../../db/kysely'
+import { Env } from '../../env'
+import { parseNameFromDb } from '../functions/names/utils'
 
 export async function getNames(env: Env) {
   const db = createKysely(env)

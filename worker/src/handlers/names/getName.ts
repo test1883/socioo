@@ -1,8 +1,8 @@
 import type { IRequest } from 'itty-router'
 import zod from 'zod'
 
-import { Env } from '../env'
-import { get } from './functions/get'
+import { Env } from '../../env'
+import { get } from '../functions/names/get'
 
 export async function getName(request: IRequest, env: Env) {
   const schema = zod.object({

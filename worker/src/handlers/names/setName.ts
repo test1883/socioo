@@ -1,10 +1,10 @@
 import { verifyMessage } from 'ethers/lib/utils'
 import { IRequest } from 'itty-router'
 
-import { Env } from '../env'
-import { ZodNameWithSignature } from '../models'
-import { get } from './functions/get'
-import { set } from './functions/set'
+import { Env } from '../../env'
+import { ZodNameWithSignature } from '../../models'
+import { get } from '../functions/names/get'
+import { set } from '../functions/names/set'
 
 export async function setName(request: IRequest, env: Env): Promise<Response> {
   const body = await request.json()

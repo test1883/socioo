@@ -1,5 +1,5 @@
 import { Env } from '../env'
-import { get } from '../handlers/functions/get'
+import { get } from '../handlers/functions/names/get'
 
 type PromiseOrResult<T> = T | Promise<T>
 
