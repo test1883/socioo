@@ -20,7 +20,7 @@ export function parsePostFromDb(
     return {
       name: post.name,
       post_id: post.postId,
-      likes: post.likes ? JSON.parse(post.likes) : undefined,
+      mints: post.mints ? JSON.parse(post.mints) : undefined,
       files: JSON.parse(post.files),
       createdAt: post.createdAt,
       updatedAt: post.updatedAt,
@@ -43,7 +43,7 @@ export function stringifyPostForDb(
     return {
         name: post.name,
         postId: post.post_id,
-        likes: post.likes ? JSON.stringify(post.likes) : undefined,
+        mints: post.mints ? JSON.stringify(post.mints) : undefined,
         files: JSON.stringify(post.files),
         updatedAt: new Date().toISOString(),
       }

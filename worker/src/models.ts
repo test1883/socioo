@@ -18,7 +18,7 @@ export const ZodProfile = z.object({
 export const ZodPost = z.object({
   name: z.string().regex(/^[a-z0-9-.]+$/),
   post_id: z.number(),
-  likes: z.record(z.string()).optional(),
+  mints: z.record(z.string()).optional(),
   files: z.record(z.string()),
 })
 
@@ -87,7 +87,7 @@ export interface ProfileInKysely {
 export interface PostInKysely {
   name: string,
   postId: number,
-  likes: string | null,
+  mints: string | null,
   files: string,
   createdAt: ColumnType<Date, never, never>
   updatedAt: ColumnType<Date, never, string | undefined>
