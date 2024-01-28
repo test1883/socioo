@@ -14,7 +14,6 @@ export async function getProfiles(env: Env) {
       [profile.name]: {
         followers: profile.followers,
         following: profile.following,
-        currentChallenge: profile.current_challenge,
       },
     }
   }, {})

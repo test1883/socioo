@@ -22,7 +22,6 @@ export function parsePostFromDb(
       post_id: post.postId,
       likes: post.likes ? JSON.parse(post.likes) : undefined,
       files: JSON.parse(post.files),
-      challenge: post.challenge ? post.challenge! : undefined,
       createdAt: post.createdAt,
       updatedAt: post.updatedAt,
     }
@@ -46,7 +45,6 @@ export function stringifyPostForDb(
         postId: post.post_id,
         likes: post.likes ? JSON.stringify(post.likes) : undefined,
         files: JSON.stringify(post.files),
-        challenge: post.challenge ? post.challenge : undefined,
         updatedAt: new Date().toISOString(),
       }
   }

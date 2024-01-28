@@ -12,15 +12,13 @@ export const ZodName = z.object({
 export const ZodProfile = z.object({
   name: z.string().regex(/^[a-z0-9-.]+$/),
   followers: z.record(z.string()).optional(),
-  following: z.record(z.string()).optional(),
-  current_challenge: z.string().optional()
+  following: z.record(z.string()).optional()
 })
 
 export const ZodPost = z.object({
   name: z.string().regex(/^[a-z0-9-.]+$/),
   post_id: z.number(),
   likes: z.record(z.string()).optional(),
-  challenge: z.string().optional(),
   files: z.record(z.string()),
 })
 
@@ -83,15 +81,13 @@ export interface NameInKysely {
 export interface ProfileInKysely {
   name: string,
   followers: string | null,
-  following: string | null,
-  currentChallenge: string | null
+  following: string | null
 }
 
 export interface PostInKysely {
   name: string,
   postId: number,
   likes: string | null,
-  challenge: string | null,
   files: string,
   createdAt: ColumnType<Date, never, never>
   updatedAt: ColumnType<Date, never, string | undefined>

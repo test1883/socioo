@@ -21,7 +21,6 @@ export function parseProfileFromDb(
       name: profile.name,
       followers: profile.followers ? JSON.parse(profile.followers) : undefined,
       following: profile.following ? JSON.parse(profile.following) : undefined,
-      currentChallenge: profile.currentChallenge
     }
   }
 }
@@ -41,8 +40,7 @@ export function stringifyProfileForDb(
     return {
         name: profile.name,
         followers: profile.followers ? JSON.stringify(profile.followers) : undefined,
-        following: profile.following ? JSON.stringify(profile.following) : undefined,
-        currentChallenge: profile.current_challenge
+        following: profile.following ? JSON.stringify(profile.following) : undefined
       }
   }
 }

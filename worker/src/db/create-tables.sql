@@ -17,14 +17,12 @@ CREATE TABLE IF NOT EXISTS profiles {
 	name TEXT NOT NULL PRIMARY KEY,
 	followers TEXT,
 	following TEXT,
-	current_challenge TEXT,
 }
 
 CREATE TABLE IF NOT EXISTS posts {
 	name TEXT NOT NULL,
 	post_id INT NOT NULL,
 	likes TEXT,
-	challenge TEXT,
 	files TEXT NOT NULL,
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
