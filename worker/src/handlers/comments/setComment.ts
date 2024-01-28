@@ -30,7 +30,7 @@ export async function setComment(request: IRequest, env: Env): Promise<Response>
     return Response.json(response, { status: 401 })
   }
 
-  // Save the name
+  // Save the post
   try {
     await set(safeParse.data, env)
     const response = { success: true }
