@@ -4,6 +4,7 @@ import { Env } from './env'
 import * as names from './handlers/names'
 import * as profiles from './handlers/profiles'
 import * as comments from './handlers/comments'
+import * as posts from './handlers/posts'
 
 const { preflight, corsify } = createCors()
 const router = Router()
@@ -19,6 +20,9 @@ router
   .post('/set-profile', (request, env) => profiles.setProfile(request, env))
   .get('/comments/:postId', (request, env) => comments.getComments(request, env))
   .post('/set-comment', (request, env) => comments.setComment(request, env))
+  .get('/get-posts/:name', (request, env) => posts.getUserPosts(request, env))
+  .get('/posts', (request, env) => posts.getPosts(env))
+  .post('/set-post', (request, env) => posts.setPost(request, env))
   .all('*', () => new Response('Not found', { status: 404 }))
 
 // Handle requests to the Worker
