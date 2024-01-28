@@ -1,4 +1,4 @@
-import { ColumnType, Generated } from 'kysely'
+import { ColumnType } from 'kysely'
 import z from 'zod'
 
 export const ZodName = z.object({
